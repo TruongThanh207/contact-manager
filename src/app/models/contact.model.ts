@@ -8,11 +8,11 @@ export class Contact {
     address: string;
     avatarUrl: string;
     backgroundUrl: string;
-    isFavorite: boolean
+    isFavorite: boolean;
+    organization: string;
 }
 
-export class IContactCreate {
-    id: number;
+export interface IContactCreate {
     name: string;
     mobile: string;
     fax: string;
@@ -21,5 +21,6 @@ export class IContactCreate {
     address: string;
     avatarUrl: string;
     backgroundUrl: string;
-    isFavorite: boolean
+    isFavorite: boolean;
+    organization: string;
 }

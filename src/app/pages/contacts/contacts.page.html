@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border" style="border-bottom: 1px rgba(0, 0, 0, 0.3) solid;">
+    <ion-toolbar>
+        <ion-title slot="primary" class="ion-text-center fw-bold">All</ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <!-- loop alpha -->
+        <div *ngFor="let alpha of arrAlpha">
+            <ion-list-header>
+                <span class="fw-bold" style="padding-left: 0.76rem;">{{alpha}}</span>
+            </ion-list-header>
+            <!-- loop item -->
+            <div *ngFor="let contact of contacts">
+                <ion-item *ngIf="contact.name[0] === alpha">
+                    <ion-buttons class="ion-no-margin" slot="start">
+                        <ion-button>
+                            <ion-icon name="star" [color]="contact.isFavorite ? 'primary' : 'light'" style="font-size: 1rem;">
+                            </ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-avatar slot="start">
+                        <img [src]="contact.avatarUrl">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2 class="fw-bold">{{contact.name}}</h2>
+                        <p>{{contact.organization}}</p>
+                    </ion-label>
+                </ion-item>
+            </div>
+            <!-- item -->
+        </div>
+        <!-- loop alpha -->
+    </ion-list>
+
+</ion-content>
