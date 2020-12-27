@@ -5,10 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ExploreContainerComponent } from './explore-container.component';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule],
   declarations: [ExploreContainerComponent],
-  exports: [ExploreContainerComponent]
+  exports: [ExploreContainerComponent],
+  providers:[CallNumber]
 })
 export class ExploreContainerComponentModule {}
