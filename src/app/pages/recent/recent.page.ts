@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/services/contact.service';
+
 
 @Component({
   selector: 'app-recent',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentPage implements OnInit {
 
-  constructor() { }
+  constructor(private contact : ContactService) { 
+    this.contact.sendSms('0911569553')
+  }
 
   ngOnInit() {
   }

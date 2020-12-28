@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SMS } from '@ionic-native/sms/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     StatusBar,
     SplashScreen,
     SMS,
+    CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

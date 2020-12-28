@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { SMS, SmsOptions } from '@ionic-native/sms/ngx';
 import { Contact, IContactCreate } from '../models/contact.model';
 import { ProxyService } from '../proxy.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { ProxyService } from '../proxy.service';
 export class ContactService extends ProxyService {
 
 
-  constructor() {
+  constructor(private sms: SMS) {
     super();
     console.log('a');
     
@@ -39,4 +41,14 @@ export class ContactService extends ProxyService {
   //   .catch(err => console.log('Error launching dialer', err));
     
   // }
+  sendSms(mobile:string)
+  {
+    let option : SmsOptions = {
+        replaceLineBreaks:false,
+        android:{
+          intent:'INTENT'
+        }
+    }
+    this.sms.send(mobile, '', option).then(x=>console.log(x)).catch(y=>console.log(y))
+  }
 }
