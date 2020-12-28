@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SMS, SmsOptions } from '@ionic-native/sms/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -7,8 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {
+  constructor(private sms: SMS) {
     
   }
-
+  onClick(){
+    var option: SmsOptions={
+      replaceLineBreaks:false,
+      android:{
+        intent:'INTENT'
+      }
+    }
+    this.sms.send('0911569553', 'Hello!', option)
+  }
 }

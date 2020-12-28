@@ -6,12 +6,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExploreContainerComponent } from './explore-container.component';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { SMS } from '@ionic-native/sms/ngx';
 
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule],
   declarations: [ExploreContainerComponent],
   exports: [ExploreContainerComponent],
-  providers:[CallNumber]
+  providers:[CallNumber, SMS]
 })
 export class ExploreContainerComponentModule {}
