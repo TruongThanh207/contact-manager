@@ -5,5 +5,28 @@
 </ion-header>
 
 <ion-content>
+<ion-button (click)="addAvatar()" expand="block" fill="clear" shape="round">
+  Add Avatar
+</ion-button>
+<ion-button (click)="addBackground()" expand="block" fill="clear" shape="round">
+  Add Background
+</ion-button>
+<ion-button (click)="updateAvatar()" expand="block" fill="clear" shape="round">
+  Update Avatar
+</ion-button>
+<ion-button (click)="updateBackground()" expand="block" fill="clear" shape="round">
+  Update Background
+</ion-button>
+<ion-list *ngIf="contacts">
+  <ion-card *ngFor="let photo of contacts">
+    <ion-avatar >
+      <img [src]="photo.avatarUrl.webviewPath" />
+    </ion-avatar>
+    <ion-img [src]="photo.backgroundUrl.webviewPath"></ion-img>
+</ion-card>
+    
+    
+</ion-list>
+
 
 </ion-content>

@@ -6,8 +6,8 @@ export class Contact {
     email: string;
     facebook: string;
     address: string;
-    avatarUrl: string;
-    backgroundUrl: string;
+    avatarUrl: Photo;
+    backgroundUrl: Photo;
     isFavorite: boolean;
     organization: string;
 }
@@ -19,8 +19,13 @@ export interface IContactCreate {
     email: string;
     facebook: string;
     address: string;
-    avatarUrl: string;
-    backgroundUrl: string;
+    avatarUrl: Photo;
+    backgroundUrl: Photo;
     isFavorite: boolean;
     organization: string;
 }
+
+export interface Photo {
+    filepath: string;
+    webviewPath: string;
+  }
